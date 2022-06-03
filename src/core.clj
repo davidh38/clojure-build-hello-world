@@ -1,6 +1,6 @@
 
 
-(ns test.core
+(ns core
   (:gen-class))
 
 (defn -main [& args]

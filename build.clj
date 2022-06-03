@@ -1,7 +1,7 @@
 (ns build
   (:require [clojure.tools.build.api :as b]))
 
-(def lib 'test/core)
+(def lib 'egail)
 (def version (format "1.2.%s" (b/git-count-revs nil)))
 (def class-dir "target/classes")
 (def basis (b/create-basis {:project "deps.edn"}))
@@ -20,4 +20,4 @@
   (b/uber {:class-dir class-dir
            :uber-file uber-file
            :basis basis
-           :main 'test.core}))
+           :main 'core}))
