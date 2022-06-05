@@ -13,10 +13,7 @@ provider "aws" {
   profile = "default"
   region  = "us-east-1"
 }
-
-#resource "aws_ecs_task_definition" "myservice" {
-#    family = "service"
-#    network_mode             = "awsvpc"
+#resource "aws_ecs_task_definition" "myservice" {#    family = "service" #    network_mode             = "awsvpc"
 #    requires_compatibilities = ["FARGATE"]
 #    cpu       = 256
 #    memory    = 512
