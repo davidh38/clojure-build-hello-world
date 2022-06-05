@@ -13,4 +13,4 @@ in the terraform folder:
 terraform init
 terraform apply
 
-aws ecs run-task  --cluster tryimport --task-definition fromecr:2 --launch-type="FARGATE" --network-configuration '{ "awsvpcConfiguration": { "securityGroups": ["sg-e9bd4ab9"], "subnets": ["subnet-0b170efc0b8f6f53b"]}}'
+aws ecs run-task  --cluster tryimport --task-definition fromecr:2 --launch-type="FARGATE" --network-configuration '{ "awsvpcConfiguration": {"assignPublicIp":"ENABLED", "securityGroups": ["sg-e9bd4ab9"], "subnets": ["subnet-0b170efc0b8f6f53b"]}}'                    
