@@ -1,5 +1,5 @@
 
-# Build and deploy the project:
+# Build and deploy "Hello World" auf AWS":
 
 build:
 
