@@ -1,18 +1,24 @@
 
 * Build and deploy "Hello World" auf AWS running on ECR with nginx"
 
-** Clone the repo:
+** Clone the repo
+#+begin_src
 git clone https://github.com/davidh38/clojure-build-hello-world.git
+#+end_src
 ** Build locally:
-*clj -T:build clean*
-*clj -T:build uber*
-*docker build -t hello-app .*
-*docker run hello-app*
+#+begin_src
+clj -T:build clean
+clj -T:build uber
+docker build -t hello-app .
+docker run hello-app
+#+end_src
 
 Push the docker container to ecr!
 ** Build infracstructure
 in the terraform folder use:
-*terraform init*
-*terraform apply*
-
-*aws ecs run-task  --cluster tryimport --task-definition fromecr:2 --launch-type="FARGATE" --network-configuration '{ "awsvpcConfiguration": {"assignPublicIp":"ENABLED", "securityGroups": ["sg-e9bd4ab9"], "subnets": ["subnet-0b170efc0b8f6f53b"]}}'*
+#+begin_src
+terraform init
+terraform apply
+aws ecs run-task  --cluster tryimport --task-definition fromecr:2 --launch-type="FARGATE" --network-configuration '{ "awsvpcConfiguration": {"assignPublicIp":"ENABLED", "securityGroups": ["sg-e9bd4ab9"], "subnets": ["subnet-0b170efc0b8f6f53b"]}}'
+#+end_src
+** Run
