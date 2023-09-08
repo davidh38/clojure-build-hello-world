@@ -6,9 +6,18 @@
 git clone https://github.com/davidh38/clojure-build-hello-world.git
 #+end_src
 ** Build locally:
+
++ Delete the target folder:
 #+begin_src
 clj -T:build clean
+#+end_src
+
++ Compile and build an Uberjar:
+#+begin_src
 clj -T:build uber
+#+end_src
+
++ Build the docker file and run it for testing purposes.
 docker build -t hello-app .
 docker run hello-app
 #+end_src
